@@ -120,24 +120,36 @@ public class MainAgenda {
 	private static void cadastraContato(Agenda agenda, Scanner scanner) {
 		System.out.print("\nPosição na agenda> ");
 		int posicao = scanner.nextInt();
+		scanner.nextLine(); // captura o \n que o nextInt deixa
 
 		if (1 > posicao || posicao > 100) {
 			System.out.println("POSIÇÃO INVÁLIDA");
 		} else {
 
 			System.out.print("\nNome> ");
-			String nome = scanner.next();
-			System.out.print("Sobrenome> ");
-			String sobrenome = scanner.next();
+			String nome = scanner.nextLine();
 
-			System.out.print("Telefone> ");
-			String telefone = scanner.next();
-			agenda.cadastraContato(posicao, nome, sobrenome, telefone);
-
-			if (agenda.cadastraContato(posicao, nome, sobrenome, telefone) == false) {
-				System.out.println("CADASTRO REALIZADO");
+			if (nome.isEmpty()) {
+				System.out.println("CONTATO INVALIDO");
 			} else {
-				System.out.println("CONTATO JA CADASTRADO");
+
+				System.out.print("Sobrenome> ");
+				String sobrenome = scanner.next();
+
+				System.out.print("Telefone> ");
+				String telefone = scanner.nextLine();
+
+				if (telefone.isEmpty()) {
+					System.out.println("CONTATO INVALIDO");
+				} else {
+
+					if (!agenda.cadastraContato(posicao, nome, sobrenome, telefone)) {
+						agenda.cadastraContato(posicao, nome, sobrenome, telefone);
+						System.out.println("CADASTRO REALIZADO");
+					} else {
+						System.out.println("CONTATO JAaaaaaaaaaaaa CADASTRADO");
+					}
+				}
 			}
 
 		}
