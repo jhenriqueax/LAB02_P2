@@ -137,7 +137,7 @@ public class MainAgenda {
 			if (agenda.cadastraContato(posicao, nome, sobrenome, telefone) == false) {
 				System.out.println("CADASTRO REALIZADO");
 			} else {
-				System.out.println("CONTATO JA CADASTRADO");
+				System.out.println("CONTATO  CADASTRADO");
 			}
 
 		}
