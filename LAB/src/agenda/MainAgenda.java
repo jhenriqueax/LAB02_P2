@@ -42,7 +42,7 @@ public class MainAgenda {
 	 */
 	private static String menu(Scanner scanner) {
 		System.out.println("\n---\nMENU\n" + "(C)adastrar Contato\n" + "(L)istar Contatos\n" + "(E)xibir Contato\n"
-				+ "(S)air\n" + "\n" + "Opção> ");
+				+ "(S)air\n" + "\nOpção> ");
 		return scanner.next().toUpperCase();
 	}
 
@@ -78,7 +78,7 @@ public class MainAgenda {
 	 * @param agenda A agenda sendo manipulada.
 	 */
 	private static void listaContatos(Agenda agenda) {
-		System.out.println("\nLista de contatos: ");
+	
 		Contato[] contatos = agenda.getContatos();
 		for (int i = 0; i < contatos.length; i++) {
 			if (contatos[i] != null) {
@@ -94,10 +94,14 @@ public class MainAgenda {
 	 * @param scanner Scanner para capturar qual contato.
 	 */
 	private static void exibeContato(Agenda agenda, Scanner scanner) {
-		System.out.print("\nQual contato> ");
+		System.out.print("Qual contato> ");
 		int posicao = scanner.nextInt();
 		Contato contato = agenda.getContato(posicao);
-		System.out.println("Dados do contato:\n" + contato.toString());
+		if(contato != null) {
+		System.out.println("Dados do contato:\n" + "\n" + contato.toString());
+		}else{
+			System.out.println("POSIÇÃO INVÁLIDA!");
+			}
 	}
 
 	/**
@@ -108,7 +112,7 @@ public class MainAgenda {
 	 * @return A String formatada.
 	 */
 	private static String formataContato(int posicao, Contato contato) {
-		return posicao + " - " + contato;
+		return posicao + " - " + contato.getNome() +" "+ contato.getSobrenome();
 	}
 
 	/**
@@ -137,7 +141,9 @@ public class MainAgenda {
 				String sobrenome = scanner.next();
 
 				System.out.print("Telefone> ");
-				String telefone = scanner.nextLine();
+				
+				//colocar um nextline para pegar (83)
+				String telefone = scanner.next();
 
 				if (telefone.isEmpty()) {
 					System.out.println("CONTATO INVALIDO");
