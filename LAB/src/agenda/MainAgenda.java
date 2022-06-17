@@ -81,14 +81,14 @@ public class MainAgenda {
 
 	// AQUIIII Não estou conseguindo retornar favoritos[i]
 	private static void exibeContatoFavorito(Agenda agenda) {
-		
+
 		Favorito[] favoritos = agenda.getFavoritos();
-		
+
 		for (int i = 0; i < 10; i++) {
 			if (favoritos[i] != null) {
-				System.out.printf("%d - %s", i,favoritos[i].toString());
+				System.out.printf("%d - %s", i, favoritos[i].toString());
+			}
 		}
-	}
 	}
 
 	/**
@@ -117,7 +117,18 @@ public class MainAgenda {
 		int posicao = scanner.nextInt();
 		Contato contato = agenda.getContato(posicao);
 		if (contato != null) {
-			System.out.println("Dados do contato:\n" + "\n" + contato.toString());
+
+			Favorito compara = new Favorito(contato.getNome(), contato.getSobrenome());
+
+			for (int i = 0; i < 10; i++) {
+				Favorito favoritos = agenda.getFavoritos(i);
+				if (compara.equals(favoritos)) {
+					System.out.println("Dados do contato:\n" + "\n" + "❤️" + contato.toString());
+				} else {
+					System.out.println("Dados do contato:\n" + "\n" + contato.toString());
+				}
+			}
+
 		} else {
 			System.out.println("POSIÇÃO INVÁLIDA!");
 		}

@@ -7,10 +7,9 @@ package agenda;
 public class Contato {
 
 	private String nome;
-	
-
 	private String sobrenome;
 	private String telefone;
+	
 	private String formatada;
 
 	public Contato(String nome, String sobrenome, String telefone) {

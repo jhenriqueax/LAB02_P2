@@ -1,5 +1,7 @@
 package agenda;
 
+import java.util.Objects;
+
 public class Favorito {
 
 	private String nomeFavorito;
@@ -29,4 +31,22 @@ public class Favorito {
 		return this.nomeFavorito + " " + this.sobrenomeFavorito;
 		
 	}
+
+	public int hashCode() {
+		return Objects.hash(nomeFavorito, sobrenomeFavorito);
+	}
+
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Favorito other = (Favorito) obj;
+		return Objects.equals(nomeFavorito, other.nomeFavorito)
+				&& Objects.equals(sobrenomeFavorito, other.sobrenomeFavorito);
+	}
 }
+
+	
