@@ -1,0 +1,47 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x000000010abd093c, pid=8955, tid=9219
+#
+# JRE version: Java(TM) SE Runtime Environment 18.9 (11.0.15+8) (build 11.0.15+8-LTS-149)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM 18.9 (11.0.15+8-LTS-149, mixed mode, tiered, compressed oops, g1 gc, bsd-amd64)
+# Problematic frame:
+# C  [libjimage.dylib+0x193c]  _ZN12ImageStrings4findEP6EndianPKcPij+0x52
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:61230 -javaagent:/Users/jhenriqueax/Applications/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/1351/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 agenda.MainAgenda
+
+Host: MacBookAir10,1 x86_64 2400 MHz, 8 cores, 8G, Darwin 21.5.0
+Time: Fri Jun 17 14:41:31 2022 -03 elapsed time: 1101.607323 seconds (0d 0h 18m 21s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fa40d00e800):  JavaThread "main" [_thread_in_vm, id=9219, stack(0x0000000308ee9000,0x0000000308fe9000)]
+
+Stack: [0x0000000308ee9000,0x0000000308fe9000],  sp=0x0000000308fe7300,  free space=1016k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.dylib+0x193c]  _ZN12ImageStrings4findEP6EndianPKcPij+0x52
+C  [libjimage.dylib+0x25cc]  _ZNK15ImageFileReader19find_location_indexEPKcPy+0x3e
+C  [libjimage.dylib+0x290c]  JIMAGE_FindResource+0xcf
+V  [libjvm.dylib+0x1dea23]  _ZN19ClassPathImageEntry11open_streamEPKcP6Thread+0x45
+V  [libjvm.dylib+0x1e0ede]  _ZN11ClassLoader10load_classEP6SymbolbP6Thread+0x13e
+V  [libjvm.dylib+0x711360]  _ZN16SystemDictionary19load_instance_classEP6Symbol6HandleP6Thread+0x2f6
+V  [libjvm.dylib+0x710437]  _ZN16SystemDictionary30resolve_instance_class_or_nullEP6Symbol6HandleS2_P6Thread+0x421
+V  [libjvm.dylib+0x70fc71]  _ZN16SystemDictionary15resolve_or_failEP6Symbol6HandleS2_bP6Thread+0x1b
+V  [libjvm.dylib+0x24e0ac]  _ZN12ConstantPool13klass_at_implERK18constantPoolHandleibP6Thread+0x10a
+V  [libjvm.dylib+0x377d35]  _ZN12ConstantPool8klass_atEiP6Thread+0x4d
+V  [libjvm.dylib+0x389ca3]  _ZN18InterpreterRuntime4_newEP10JavaThreadP12ConstantPooli+0x29
+j  java.util.Scanner.throwFor()V+26 java.base@11.0.15
+j  java.util.Scanner.next()Ljava/lang/String;+55 java.base@11.0.15
+j  agenda.MainAgenda.menu(Ljava/util/Scanner;)Ljava/lang/String;+9
+j  agenda.MainAgenda.main([Ljava/lang/String;)V+95
+v  ~StubRoutines::call_stub
+V  [libjvm.dylib+0x39135f]  _ZN9JavaCalls11call_helperEP9JavaValueRK12methodHandleP17JavaCallArgumentsP6Thread+0x207
+V
