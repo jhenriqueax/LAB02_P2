@@ -113,21 +113,29 @@ public class MainAgenda {
 	 * @param scanner Scanner para capturar qual contato.
 	 */
 	private static void exibeContato(Agenda agenda, Scanner scanner) {
+		boolean comparaBool = false;
 		System.out.print("Qual contato> ");
 		int posicao = scanner.nextInt();
 		Contato contato = agenda.getContato(posicao);
+		
 		if (contato != null) {
 
 			Favorito compara = new Favorito(contato.getNome(), contato.getSobrenome());
-
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i <=10; i++) {
 				Favorito favoritos = agenda.getFavoritos(i);
 				if (compara.equals(favoritos)) {
+					comparaBool = true;
+					break;
+				}
+			}
+
+				if (comparaBool == true) {
 					System.out.println("Dados do contato:\n" + "\n" + "❤️" + contato.toString());
 				} else {
 					System.out.println("Dados do contato:\n" + "\n" + contato.toString());
 				}
-			}
+
+			
 
 		} else {
 			System.out.println("POSIÇÃO INVÁLIDA!");
