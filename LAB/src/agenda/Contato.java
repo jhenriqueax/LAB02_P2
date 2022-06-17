@@ -7,6 +7,8 @@ package agenda;
 public class Contato {
 
 	private String nome;
+	
+
 	private String sobrenome;
 	private String telefone;
 	private String formatada;
@@ -15,6 +17,10 @@ public class Contato {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.telefone = telefone;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getNome() {

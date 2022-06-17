@@ -81,7 +81,9 @@ public class MainAgenda {
 
 	// AQUIIII Não estou conseguindo retornar favoritos[i]
 	private static void exibeContatoFavorito(Agenda agenda) {
+		
 		Favorito[] favoritos = agenda.getFavoritos();
+		
 		for (int i = 0; i < 10; i++) {
 			if (favoritos[i] != null) {
 				System.out.printf("%d - %s", i,favoritos[i].toString());

@@ -12,7 +12,7 @@ public class Agenda {
 
 	private static final int TAMANHO_AGENDA = 100;
 	private static final int TAMANHO_AGENDA_FAVORITOS = 10;
-	
+
 	private Favorito[] favoritos;
 	private Contato[] contatos;
 
@@ -23,7 +23,7 @@ public class Agenda {
 		this.contatos = new Contato[TAMANHO_AGENDA];
 		this.favoritos = new Favorito[TAMANHO_AGENDA_FAVORITOS];
 	}
-	
+
 	public Favorito[] getFavoritos() {
 		return this.favoritos.clone();
 	}
@@ -78,11 +78,12 @@ public class Agenda {
 		return cadastrado;
 
 	}
-	
-	public void cadastraContatoFavorito(int posicao, int contato){
-		
-		this.favoritos[posicao] = new Favorito(contatos[contato]);
+
+	public void cadastraContatoFavorito(int posicao, int contato) {
+
+		this.favoritos[posicao] = new Favorito(contatos[contato].getNome(), contatos[contato].getSobrenome());
+		String nomeFavotiro = "❤️" + contatos[contato].getNome();
+		contatos[contato].setNome(nomeFavotiro);
 	}
-	
 
 }
