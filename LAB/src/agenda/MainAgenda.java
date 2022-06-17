@@ -117,11 +117,11 @@ public class MainAgenda {
 		System.out.print("Qual contato> ");
 		int posicao = scanner.nextInt();
 		Contato contato = agenda.getContato(posicao);
-		
+
 		if (contato != null) {
 
 			Favorito compara = new Favorito(contato.getNome(), contato.getSobrenome());
-			for (int i = 0; i <=10; i++) {
+			for (int i = 0; i <= 9; i++) {
 				Favorito favoritos = agenda.getFavoritos(i);
 				if (compara.equals(favoritos)) {
 					comparaBool = true;
@@ -129,13 +129,11 @@ public class MainAgenda {
 				}
 			}
 
-				if (comparaBool == true) {
-					System.out.println("Dados do contato:\n" + "\n" + "❤️" + contato.toString());
-				} else {
-					System.out.println("Dados do contato:\n" + "\n" + contato.toString());
-				}
-
-			
+			if (comparaBool == true) {
+				System.out.println("Dados do contato:\n" + "\n" + "❤️" + contato.toString());
+			} else {
+				System.out.println("Dados do contato:\n" + "\n" + contato.toString());
+			}
 
 		} else {
 			System.out.println("POSIÇÃO INVÁLIDA!");
@@ -154,14 +152,32 @@ public class MainAgenda {
 	}
 
 	private static void cadastradaContatoFavorito(Agenda agenda, Scanner scanner) {
+		boolean comparaBool = false;
 		System.out.println("Contato> ");
 		int contatoSalvo = scanner.nextInt();
 
+		Contato contato = agenda.getContato(contatoSalvo);
+
 		System.out.println("Posicao> ");
 		int posicao = scanner.nextInt();
-		System.out.printf("CONTATO FAVORITADO NA POSIÇÃO %d !", posicao);
 
-		agenda.cadastraContatoFavorito(posicao, contatoSalvo);
+		Favorito compara = new Favorito(contato.getNome(), contato.getSobrenome());
+		for (int i = 0; i <= 9; i++) {
+			Favorito favoritos = agenda.getFavoritos(i);
+			if (compara.equals(favoritos)) {
+				comparaBool = true;
+				break;
+			}
+		}
+
+		if (comparaBool == true) {
+			System.out.println("ESTE CONTATO JÁ FOI FAVORITADO");
+		} else {
+
+			System.out.printf("CONTATO FAVORITADO NA POSIÇÃO %d !", posicao);
+			agenda.cadastraContatoFavorito(posicao, contatoSalvo);
+		}
+
 	}
 
 	/**
