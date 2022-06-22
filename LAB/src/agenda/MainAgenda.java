@@ -102,7 +102,7 @@ public class MainAgenda {
 		
 		
 	}
-
+	//teste
 	private static void exibeContatoFavorito(Agenda agenda) {
 
 		Favorito[] favoritos = agenda.getFavoritos();
