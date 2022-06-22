@@ -82,8 +82,24 @@ public class MainAgenda {
 		}
 	}
 
+	// AQUIIIIIIIII 22/06
 	private static void cadastraTag(Agenda agenda, Scanner scanner) {
-		System.out.println("");
+		
+		Contato[] contatos = agenda.getContatos();
+		
+		System.out.println("Contatos(s)> ");
+		System.out.println("Tag> ");
+		String tag = scanner.nextLine();
+		System.out.println("Posicao> ");
+		int posicao = scanner.nextInt();
+		
+		while(scanner.hasNext()){
+			contatos[posicao].setTag(tag,posicao);
+			
+		}
+		
+		
+		
 		
 	}
 
