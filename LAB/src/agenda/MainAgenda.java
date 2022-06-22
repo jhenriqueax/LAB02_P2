@@ -84,25 +84,28 @@ public class MainAgenda {
 
 	// AQUIIIIIIIII 22/06
 	private static void cadastraTag(Agenda agenda, Scanner scanner) {
+
+		int[] contatosRecebidos = new int[5];
 		
 		Contato[] contatos = agenda.getContatos();
-		
+
 		System.out.println("Contatos(s)> ");
+
+		int i = 0;
+		while (scanner.hasNextInt()) {
+			contatosRecebidos[i] = scanner.nextInt();
+		}
+
 		System.out.println("Tag> ");
 		String tag = scanner.nextLine();
 		System.out.println("Posicao> ");
 		int posicao = scanner.nextInt();
 		
-		while(scanner.hasNext()){
-			contatos[posicao].setTag(tag,posicao);
-			
-		}
 		
-		
-		
-		
+		contatos[posicao].setTag(posicao, tag);
+
 	}
-	//teste
+
 	private static void exibeContatoFavorito(Agenda agenda) {
 
 		Favorito[] favoritos = agenda.getFavoritos();
@@ -174,6 +177,7 @@ public class MainAgenda {
 		return posicao + " - " + contato.getNome() + " " + contato.getSobrenome();
 	}
 
+	// conferir as posiçoes de i
 	private static void cadastradaContatoFavorito(Agenda agenda, Scanner scanner) {
 		boolean comparaBool = false;
 		System.out.println("Contato> ");
