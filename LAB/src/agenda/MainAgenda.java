@@ -43,7 +43,7 @@ public class MainAgenda {
 	 */
 	private static String menu(Scanner scanner) {
 		System.out.println("\n---\nMENU\n" + "(C)adastrar Contato\n" + "(L)istar Contatos\n" + "(E)xibir Contato\n"
-				+ "(F)avoritos\n" + "(A)dicionar Favorito\n" + "(S)air\n" + "\n" + "Opção> ");
+				+ "(F)avoritos\n" + "(A)dicionar Favorito\n" + "(T)ags\n" + "(S)air\n" + "\n" + "Opção> ");
 		return scanner.next().toUpperCase();
 	}
 
@@ -71,6 +71,9 @@ public class MainAgenda {
 		case "A":
 			cadastradaContatoFavorito(agenda, scanner);
 			break;
+		case "T":
+			cadastraTag(agenda, scanner);
+			break;
 		case "S":
 			sai();
 			break;
@@ -79,7 +82,11 @@ public class MainAgenda {
 		}
 	}
 
-	// AQUIIII Não estou conseguindo retornar favoritos[i]
+	private static void cadastraTag(Agenda agenda, Scanner scanner) {
+		System.out.println("");
+		
+	}
+
 	private static void exibeContatoFavorito(Agenda agenda) {
 
 		Favorito[] favoritos = agenda.getFavoritos();

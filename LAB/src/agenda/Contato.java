@@ -9,6 +9,7 @@ public class Contato {
 	private String nome;
 	private String sobrenome;
 	private String telefone;
+	private String[] tag;
 	
 	private String formatada;
 
@@ -16,6 +17,7 @@ public class Contato {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.telefone = telefone;
+		this.tag = new String[5];
 	}
 	
 	public void setNome(String nome) {
@@ -33,7 +35,17 @@ public class Contato {
 	public String getTelefone() {
 		return this.telefone;
 	}
+	
 
+	public String[] getTag() {
+		return tag;
+	}
+
+	public void setTag(String[] tag) {
+		this.tag = tag;
+	}
+
+	
 	public static void cadastraContato(int posicao, String nome2, String sobrenome2, String telefone2) {
 
 	}
