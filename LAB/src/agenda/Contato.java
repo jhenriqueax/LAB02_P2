@@ -4,6 +4,8 @@
 
 package agenda;
 
+import java.util.Iterator;
+
 public class Contato {
 
 	private String nome;
@@ -11,6 +13,7 @@ public class Contato {
 	private String telefone;
 	private String[] tag;
 	
+	private String concatena;
 	private String formatada;
 
 	public Contato(String nome, String sobrenome, String telefone) {
@@ -18,6 +21,7 @@ public class Contato {
 		this.sobrenome = sobrenome;
 		this.telefone = telefone;
 		this.tag = new String[5];
+		this.concatena = "";
 	}
 	
 	public void setNome(String nome) {
@@ -40,9 +44,11 @@ public class Contato {
 	public String[] getTag() {
 		return tag;
 	}
-
+	
 	public void setTag(int posicao, String tag) {
 		this.tag[posicao] = tag;
+		
+	
 	}
 
 	
@@ -51,9 +57,19 @@ public class Contato {
 	}
 
 	public String toString() {
-		formatada = String.format("%s %s\n%s", this.nome, this.sobrenome, this.telefone);
+		
+		for (int i = 0; i < tag.length; i++) {
+			
+			if(tag[i] != null){
+			concatena += tag[i] + " ";
+			}
+		}
+	
+		formatada = String.format("%s %s\n%s \n%s", this.nome, this.sobrenome, this.telefone, this.concatena);
 		return formatada;
 
 	}
+	
+
 
 }
