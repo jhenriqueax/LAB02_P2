@@ -129,7 +129,7 @@ public class MainAgenda {
 	/**
 	 * Imprime os detalhes de um dos contatos da agenda.
 	 * 
-	 * @param agenda  A agenda.
+	 * @param agenda  A agenda
 	 * @param scanner Scanner para capturar qual contato.
 	 */
 	private static void exibeContato(Agenda agenda, Scanner scanner) {
