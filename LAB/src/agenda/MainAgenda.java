@@ -82,7 +82,7 @@ public class MainAgenda {
 		}
 	}
 
-	// AQUIIIIIIIII 22/06
+	// AQUIIIIIIIII falta terminar
 	private static void cadastraTag(Agenda agenda, Scanner scanner) {
 
 		
@@ -91,7 +91,7 @@ public class MainAgenda {
 		System.out.println("Contatos(s)> ");	
 		int posicaoContato = scanner.nextInt();
 		
-		
+		//Adicionar uma lógica que faça ele cadastrar em 2 contatos de 1 vez
 		
 		scanner.nextLine(); // captura o \n que o nextInt deixa
 		System.out.println("Tag> ");
