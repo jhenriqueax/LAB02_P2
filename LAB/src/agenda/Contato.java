@@ -12,7 +12,16 @@ public class Contato {
 	private String sobrenome;
 	private String telefone;
 	private String[] tag;
+	private int posicaofavorito;
 	
+	public int getPosicaofavorito() {
+		return posicaofavorito;
+	}
+
+	public void setPosicaofavorito(int posicaofavorito) {
+		this.posicaofavorito = posicaofavorito;
+	}
+
 	private String concatena;
 	private String formatada;
 

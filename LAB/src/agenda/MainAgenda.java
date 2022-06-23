@@ -43,7 +43,7 @@ public class MainAgenda {
 	 */
 	private static String menu(Scanner scanner) {
 		System.out.println("\n---\nMENU\n" + "(C)adastrar Contato\n" + "(L)istar Contatos\n" + "(E)xibir Contato\n"
-				+ "(F)avoritos\n" + "(A)dicionar Favorito\n" + "(T)ags\n" + "(S)air\n" + "\n" + "Opção> ");
+				+ "(F)avoritos\n" + "(A)dicionar Favorito\n" + "(T)ags\n" + "(R)emover Contato\n" +"(S)air\n" + "\n" + "Opção> ");
 		return scanner.next().toUpperCase();
 	}
 
@@ -74,12 +74,24 @@ public class MainAgenda {
 		case "T":
 			cadastraTag(agenda, scanner);
 			break;
+		case "R":
+			removeContato(agenda, scanner);
+			break;
 		case "S":
 			sai();
 			break;
 		default:
 			System.out.println("OPÇÃO INVALIDA!");
 		}
+	}
+
+	private static void removeContato(Agenda agenda, Scanner scanner) {
+			
+		System.out.println("Contato(s)> ");
+		int posicao = scanner.nextInt();
+		agenda.remove(posicao);
+		
+		
 	}
 
 	// AQUIIIIIIIII falta terminar
@@ -200,6 +212,7 @@ public class MainAgenda {
 		} else {
 
 			System.out.printf("CONTATO FAVORITADO NA POSIÇÃO %d !", posicao);
+			contato.setPosicaofavorito(posicao);
 			agenda.cadastraContatoFavorito(posicao, contatoSalvo);
 		}
 

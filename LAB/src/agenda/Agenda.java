@@ -89,4 +89,17 @@ public class Agenda {
 		return this.favoritos[i];
 	}
 
+	
+	public void remove(int pos) {
+		
+		int posFav = contatos[pos].getPosicaofavorito();
+		
+		favoritos[posFav] = null;
+		contatos[pos] = null;
+	}
+	
+	
+	
 }
+
+	
