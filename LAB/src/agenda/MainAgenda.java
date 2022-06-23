@@ -85,10 +85,14 @@ public class MainAgenda {
 	// AQUIIIIIIIII 22/06
 	private static void cadastraTag(Agenda agenda, Scanner scanner) {
 
+		
 		Contato[] contatos = agenda.getContatos();
 
 		System.out.println("Contatos(s)> ");	
 		int posicaoContato = scanner.nextInt();
+		
+		
+		
 		scanner.nextLine(); // captura o \n que o nextInt deixa
 		System.out.println("Tag> ");
 		String tag = scanner.nextLine();
