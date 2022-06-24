@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * Lógica para ler de arquivos csv os dados necessários e povoar uma agenda.
+ * Lógica para ler de arquivos csv os dados necessários e povoar uma agenda. 
  * 
  * @author nazarenoandrade
  *
@@ -18,13 +18,13 @@ public class LeitorDeAgenda {
 	private static final int COLUNA_SOBRENOME = 2;
 	private static final int COLUNA_TELEFONE = 3;
 
+
 	/**
 	 * Lê contatos de um arquivo CSV e os coloca em uma agenda.
-	 * 
 	 * @param arquivoContatos Caminho para arquivo contendo contatos.
-	 * @param agenda          A agenda a manipular.
+	 * @param agenda A agenda a manipular.
 	 * @return O número de contatos adicionados à agenda.
-	 * @throws IOException           Caso não tenhamos permissão de ler o arquivo.
+	 * @throws IOException Caso não tenhamos permissão de ler o arquivo.
 	 * @throws FileNotFoundException Caso o arquivo não exista.
 	 */
 	public int carregaContatos(String arquivoContatos, Agenda agenda) throws FileNotFoundException, IOException {
@@ -42,15 +42,16 @@ public class LeitorDeAgenda {
 				processaLinhaCsvContatos(campos, agenda);
 			}
 		}
-
+		
 		return carregados;
 	}
 
+	
 	/**
-	 * Coloca na agenda os dados de uma linha do arquivo de agenda inicial.
+	 * Coloca na agenda os dados de uma linha do arquivo de agenda inicial. 
 	 * 
-	 * @param campos As informações lidas do csv.
-	 * @param agenda A agenda a manipular.
+	 * @param campos As informações lidas do csv. 
+	 * @param agenda A agenda a manipular. 
 	 */
 	private void processaLinhaCsvContatos(String[] campos, Agenda agenda) {
 		int posicao = Integer.parseInt(campos[COLUNA_POSICAO]);
@@ -58,7 +59,8 @@ public class LeitorDeAgenda {
 		String sobrenome = campos[COLUNA_SOBRENOME].trim();
 		String telefone = campos[COLUNA_TELEFONE].trim();
 
-		Contato.cadastraContato(posicao, nome, sobrenome, telefone);
+		agenda.cadastraContato(posicao, nome, sobrenome, telefone);
 	}
 
 }
+

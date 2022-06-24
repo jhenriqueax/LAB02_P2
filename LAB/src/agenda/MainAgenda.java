@@ -2,7 +2,6 @@ package agenda;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -101,17 +100,22 @@ public class MainAgenda {
 		Contato[] contatos = agenda.getContatos();
 
 		System.out.println("Contatos(s)> ");	
-		int posicaoContato = scanner.nextInt();
-
-		
+		String posicaoContato = scanner.nextLine();
 		scanner.nextLine(); // captura o \n que o nextInt deixa
+		String[] arrayPosicao = posicaoContato.split(" ");
 		System.out.println("Tag> ");
 		String tag = scanner.nextLine();
 		System.out.println("Posicao> ");
 		int posicao = scanner.nextInt();
 		
+		System.out.println(arrayPosicao[0]);
+		System.out.println("impri");
 		
-		contatos[posicaoContato].setTag(posicao, tag);
+		for (int i = 0; i <= arrayPosicao.length; i++) {
+			int pos = Integer.parseInt((arrayPosicao[i]));
+			contatos[pos].setTag(posicao, tag);
+		}
+		
 
 	}
 
