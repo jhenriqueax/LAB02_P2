@@ -4,8 +4,6 @@
 
 package agenda;
 
-import java.util.Iterator;
-
 public class Contato {
 
 	private String nome;
