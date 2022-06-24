@@ -93,25 +93,21 @@ public class MainAgenda {
 		
 	}
 
-	// AQUIIIIIIIII falta terminar
+
 	private static void cadastraTag(Agenda agenda, Scanner scanner) {
 
-		
 		Contato[] contatos = agenda.getContatos();
-
+		scanner.nextLine(); // captura o \n que o next deixa
 		System.out.println("Contatos(s)> ");	
 		String posicaoContato = scanner.nextLine();
-		scanner.nextLine(); // captura o \n que o nextInt deixa
+		
 		String[] arrayPosicao = posicaoContato.split(" ");
 		System.out.println("Tag> ");
 		String tag = scanner.nextLine();
 		System.out.println("Posicao> ");
 		int posicao = scanner.nextInt();
 		
-		System.out.println(arrayPosicao[0]);
-		System.out.println("impri");
-		
-		for (int i = 0; i <= arrayPosicao.length; i++) {
+		for (int i = 0; i < arrayPosicao.length; i++) {
 			int pos = Integer.parseInt((arrayPosicao[i]));
 			contatos[pos].setTag(posicao, tag);
 		}
@@ -258,7 +254,7 @@ public class MainAgenda {
 						agenda.cadastraContato(posicao, nome, sobrenome, telefone);
 						System.out.println("CADASTRO REALIZADO");
 					} else {
-						System.out.println("CONTATO JAaaaaaaaaaaaa CADASTRADO");
+						System.out.println("CONTATO JA CADASTRADO");
 					}
 				}
 			}
