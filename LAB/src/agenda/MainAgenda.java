@@ -88,7 +88,7 @@ public class MainAgenda {
 			
 		System.out.println("Contato(s)> ");
 		int posicao = scanner.nextInt();
-		agenda.remove(posicao);
+		agenda.remove(posicao-1);
 		
 		
 	}
@@ -109,7 +109,7 @@ public class MainAgenda {
 		
 		for (int i = 0; i < arrayPosicao.length; i++) {
 			int pos = Integer.parseInt((arrayPosicao[i]));
-			contatos[pos].setTag(posicao, tag);
+			contatos[pos-1].setTag(posicao-1, tag);
 		}
 		
 
@@ -121,7 +121,7 @@ public class MainAgenda {
 
 		for (int i = 0; i < 10; i++) {
 			if (favoritos[i] != null) {
-				System.out.printf("%d - %s", i, favoritos[i].toString());
+				System.out.printf("%d - %s", i+1, favoritos[i].toString());
 			}
 		}
 	}
@@ -136,7 +136,7 @@ public class MainAgenda {
 		Contato[] contatos = agenda.getContatos();
 		for (int i = 0; i < contatos.length; i++) {
 			if (contatos[i] != null) {
-				System.out.println(formataContato(i, contatos[i]));
+				System.out.println(formataContato(i + 1, contatos[i]));
 			}
 		}
 	}
@@ -151,7 +151,7 @@ public class MainAgenda {
 		boolean comparaBool = false;
 		System.out.print("Qual contato> ");
 		int posicao = scanner.nextInt();
-		Contato contato = agenda.getContato(posicao);
+		Contato contato = agenda.getContato(posicao-1);
 
 		if (contato != null) {
 
@@ -192,7 +192,7 @@ public class MainAgenda {
 		System.out.println("Contato> ");
 		int contatoSalvo = scanner.nextInt();
 
-		Contato contato = agenda.getContato(contatoSalvo);
+		Contato contato = agenda.getContato(contatoSalvo -1);
 
 		System.out.println("Posicao> ");
 		int posicao = scanner.nextInt();
@@ -212,7 +212,7 @@ public class MainAgenda {
 
 			System.out.printf("CONTATO FAVORITADO NA POSIÇÃO %d !", posicao);
 			contato.setPosicaofavorito(posicao -1);
-			agenda.cadastraContatoFavorito(posicao -1, contatoSalvo);
+			agenda.cadastraContatoFavorito(posicao -1, contatoSalvo-1);
 		}
 
 	}
@@ -250,8 +250,8 @@ public class MainAgenda {
 					System.out.println("CONTATO INVALIDO");
 				} else {
 
-					if (!agenda.cadastraContato(posicao, nome, sobrenome, telefone)) {
-						agenda.cadastraContato(posicao, nome, sobrenome, telefone);
+					if (!agenda.cadastraContato(posicao -1, nome, sobrenome, telefone)) {
+						agenda.cadastraContato(posicao -1, nome, sobrenome, telefone);
 						System.out.println("CADASTRO REALIZADO");
 					} else {
 						System.out.println("CONTATO JA CADASTRADO");
