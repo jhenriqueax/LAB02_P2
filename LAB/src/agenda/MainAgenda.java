@@ -84,6 +84,12 @@ public class MainAgenda {
 		}
 	}
 
+	/**
+	 * Método que remove o contato selecionado.
+	 * 
+	 * @param agenda a agenda que estamos manipulando
+	 * @param scanner para capturar entrada do usuário
+	 */
 	private static void removeContato(Agenda agenda, Scanner scanner) {
 			
 		System.out.println("Contato(s)> ");
@@ -93,7 +99,12 @@ public class MainAgenda {
 		
 	}
 
-
+	/**
+	 * Método que cadastra as tags no contato selecionado.
+	 * 
+	 * @param agenda a agenda que estamos manipulando
+	 * @param scanner para ler entradas do usuário
+	 */
 	private static void cadastraTag(Agenda agenda, Scanner scanner) {
 
 		Contato[] contatos = agenda.getContatos();
@@ -114,7 +125,13 @@ public class MainAgenda {
 		
 
 	}
-
+	
+	/**
+	 * Método que exibe os contatos favoritos armazenados no array de
+	 * favoritos em agenda.
+	 * 
+	 * @param agenda a agenda que estamos manipulando
+	 */
 	private static void exibeContatoFavorito(Agenda agenda) {
 
 		Favorito[] favoritos = agenda.getFavoritos();
@@ -186,7 +203,12 @@ public class MainAgenda {
 		return posicao + " - " + contato.getNome() + " " + contato.getSobrenome();
 	}
 
-	// conferir as posiçoes de i
+	/**
+	 * Método que cadastra contato favorito na posição no array de favoritos.
+	 * 
+	 * @param agenda a agenda que estamos manipulando
+	 * @param scanner para ler a as entradas do usuário
+	 */
 	private static void cadastradaContatoFavorito(Agenda agenda, Scanner scanner) {
 		boolean comparaBool = false;
 		System.out.println("Contato> ");
