@@ -28,7 +28,7 @@ public class Favorito {
 	/**
 	 * Método que retorna o nome do objeto favorito.
 	 * 
-	 * @return nome favorito
+	 * @return nomeFavorito nome do contato favorito
 	 */
 	public String getNome() {
 		return nomeFavorito;
@@ -37,7 +37,7 @@ public class Favorito {
 	/**
 	 * Método que retorna o sobrenome favorito.
 	 * 
-	 * @return sobrenome favorito
+	 * @return sobrenomeFavorito sobrenome do contato favorito
 	 */
 	public String getSobrenome() {
 		return sobrenomeFavorito;

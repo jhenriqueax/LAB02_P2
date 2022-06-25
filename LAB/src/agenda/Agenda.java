@@ -15,7 +15,6 @@ public class Agenda {
 
 	private Favorito[] favoritos;
 	private Contato[] contatos;
-	
 
 	/**
 	 * Cria uma agenda.
@@ -82,24 +81,19 @@ public class Agenda {
 
 	public void cadastraContatoFavorito(int posicao, int contato) {
 		this.favoritos[posicao] = new Favorito(contatos[contato].getNome(), contatos[contato].getSobrenome());
-		
+
 	}
 
 	public Favorito getFavoritos(int i) {
 		return this.favoritos[i];
 	}
 
-	
 	public void remove(int pos) {
-		
+
 		int posFav = contatos[pos].getPosicaofavorito();
-		
+
 		favoritos[posFav] = null;
 		contatos[pos] = null;
 	}
-	
-	
-	
-}
 
-	
+}
