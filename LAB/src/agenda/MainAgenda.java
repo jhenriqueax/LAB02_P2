@@ -240,8 +240,8 @@ public class MainAgenda {
 			} else {
 
 				System.out.print("Sobrenome>  ");
-				String sobrenome = scanner.next();
-				scanner.nextLine(); // captura o \n que o next deixa
+				String sobrenome = scanner.nextLine();
+				
 
 				System.out.print("Telefone> ");
 				String telefone = scanner.nextLine();

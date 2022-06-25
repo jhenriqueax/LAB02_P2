@@ -8,6 +8,8 @@
 
 package agenda;
 
+import java.util.Objects;
+
 public class Contato {
 
 	/**
@@ -152,4 +154,28 @@ public class Contato {
 
 	}
 
+
+	
+	/**
+	 * Método hashcode utilizando na implementação do equals
+	 */
+	public int hashCode() {
+		return Objects.hash(nome, sobrenome, telefone);
+	}
+	
+	/**
+	 * Método equal que compara 2 objetos.
+	 */
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Contato other = (Contato) obj;
+		return Objects.equals(nome, other.nome) && Objects.equals(sobrenome, other.sobrenome);
+	}
+
+	
 }

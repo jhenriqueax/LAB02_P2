@@ -9,27 +9,44 @@ package agenda;
  */
 
 public class Agenda {
-
+	
+	/**
+	 * Atributo do tipo int, que define o tamanho da agenda.
+	 */
 	private static final int TAMANHO_AGENDA = 100;
+	/**
+	 * Atributo do tipo int, que define o tamanho da agenda favoritos.
+	 */
 	private static final int TAMANHO_AGENDA_FAVORITOS = 10;
-
+	/**
+	 * Atributo do tipo  array de favorito que armazena os objetos do tipo favoritos.
+	 */
 	private Favorito[] favoritos;
+	/**
+	 * Atributo do tipo  array de contato que armazena os objetos do tipo contatos.
+	 */
 	private Contato[] contatos;
 
+	
 	/**
-	 * Cria uma agenda.
+	 * Método que cria as agendas.
 	 */
 	public Agenda() {
 		this.contatos = new Contato[TAMANHO_AGENDA];
 		this.favoritos = new Favorito[TAMANHO_AGENDA_FAVORITOS];
 	}
-
+	 
+	/**
+	 * Método que acessa a lista de contatos favoritos mantida.
+	 * 
+	 * @return O array de contatos favoritos.
+	 */
 	public Favorito[] getFavoritos() {
 		return this.favoritos.clone();
 	}
 
 	/**
-	 * Acessa a lista de contatos mantida.
+	 * Método que acessa a lista de contatos mantida.
 	 * 
 	 * @return O array de contatos.
 	 */
@@ -48,7 +65,7 @@ public class Agenda {
 	}
 
 	/**
-	 * #############Cadastra um contato em uma posição. Um cadastro em uma posição
+	 * Cadastra um contato em uma posição. Um cadastro em uma posição
 	 * que já existe sobrescreve o anterior.
 	 * 
 	 * @param posicao   Posição do contato.
@@ -59,11 +76,13 @@ public class Agenda {
 	public boolean cadastraContato(int posicao, String nome, String sobrenome, String telefone) {
 
 		boolean cadastrado = false;
+		
+		Contato contatoCompara = new Contato(nome, sobrenome, telefone);
 
 		for (int i = 0; i < contatos.length; i++) {
 
 			if (contatos[i] != null) {
-				if (contatos[i].getNome().equals(nome) && contatos[i].getSobrenome().equals(sobrenome)) {
+				if (contatos[i].equals(contatoCompara)) {
 					cadastrado = true;
 					break;
 				}
@@ -79,21 +98,38 @@ public class Agenda {
 
 	}
 
+	/**
+	 * Método que cadastra contatos favoritados no array.
+	 * 
+	 * @param posicao posição em que o objeto contato favorito será cadastrado
+	 * @param contato contato que vai ser cadastrado dentro do array
+	 */
 	public void cadastraContatoFavorito(int posicao, int contato) {
 		this.favoritos[posicao] = new Favorito(contatos[contato].getNome(), contatos[contato].getSobrenome());
 
 	}
-
-	public Favorito getFavoritos(int i) {
-		return this.favoritos[i];
+	
+	/**
+	 * Método que retorna obejto do tipo favoritos armenzado na posição informada.
+	 * 
+	 * @param posicao posição do array em que o objeto está armazenado
+	 * @return objeto do tipo favoritos na posição informada pelo usuário
+	 */
+	public Favorito getFavoritos(int posicao) {
+		return this.favoritos[posicao];
 	}
 
-	public void remove(int pos) {
+	/**
+	 * Método que remove os objetos contatos e favoritos do array em que estão armazenados.
+	 * 
+	 * @param posicao posicao em que o objeto contatos está armazenado dentro do array.
+	 */
+	public void remove(int posicao) {
 
-		int posFav = contatos[pos].getPosicaofavorito();
+		int posicaoFavoritos = contatos[posicao].getPosicaofavorito();
 
-		favoritos[posFav] = null;
-		contatos[pos] = null;
+		favoritos[posicaoFavoritos] = null;
+		contatos[posicao] = null;
 	}
 
 }
