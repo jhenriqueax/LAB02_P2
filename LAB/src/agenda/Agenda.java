@@ -88,7 +88,7 @@ public class Agenda {
 				}
 			}
 			if (i == 99) {
-				this.contatos[posicao] = new Contato(nome, sobrenome, telefone);
+				this.contatos[posicao-1] = new Contato(nome, sobrenome, telefone);
 				cadastrado = false;
 				break;
 			}

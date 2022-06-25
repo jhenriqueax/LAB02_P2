@@ -19,13 +19,37 @@ class AgendaTeste {
 	}
 
 	
-
+	/**
+	 * Testando comportamento com todos os  parametros 
+	 */
 	@Test
-	void testaCadastraContato(){
+	void testaCadastraContato01(){
 	
-		assertFalse(agendaTeste.cadastraContato(2, "Joao", "Henrique", "12345678"));
-		assertFalse(agendaTeste.cadastraContato(3, "Pedro", "", "123456789"));
+		assertFalse(agendaTeste.cadastraContato(2, "Eduardo", "Gabriel", "12345678"));
+	}
+	
+	/**
+	 * Testando comportamento sem o parametro sobrenome 
+	 */
+	@Test
+	void testaCadastraContato02(){
+	
+		assertFalse(agendaTeste.cadastraContato(2, "Livia", "", "12345678"));
 		
 	}
 	
+	/**
+	 * Testando limite das posiçoes do array de 100
+	 */
+	@Test
+	void testaCadastraContato03(){
+	
+		assertFalse(agendaTeste.cadastraContato(1, "Joao", "Henrique", "555-1234"));
+		assertFalse(agendaTeste.cadastraContato(50, "Gabriel", "Lacerda", "555-2345"));
+		assertFalse(agendaTeste.cadastraContato(100, "Lucas", "Carvalho", "555-3456"));
+		
+		
+	}
+
+
 }

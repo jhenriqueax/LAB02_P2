@@ -138,7 +138,7 @@ public class MainAgenda {
 
 		for (int i = 0; i < 10; i++) {
 			if (favoritos[i] != null) {
-				System.out.printf("%d - %s", i+1, favoritos[i].toString());
+				System.out.printf("%d - %s\n", i+1, favoritos[i].toString());
 			}
 		}
 	}
@@ -153,7 +153,7 @@ public class MainAgenda {
 		Contato[] contatos = agenda.getContatos();
 		for (int i = 0; i < contatos.length; i++) {
 			if (contatos[i] != null) {
-				System.out.println(formataContato(i + 1, contatos[i]));
+				System.out.println(formataContato(i+1, contatos[i]));
 			}
 		}
 	}
@@ -272,8 +272,8 @@ public class MainAgenda {
 					System.out.println("CONTATO INVALIDO");
 				} else {
 
-					if (!agenda.cadastraContato(posicao -1, nome, sobrenome, telefone)) {
-						agenda.cadastraContato(posicao -1, nome, sobrenome, telefone);
+					if (!agenda.cadastraContato(posicao, nome, sobrenome, telefone)) {
+						agenda.cadastraContato(posicao, nome, sobrenome, telefone);
 						System.out.println("CADASTRO REALIZADO");
 					} else {
 						System.out.println("CONTATO JA CADASTRADO");
