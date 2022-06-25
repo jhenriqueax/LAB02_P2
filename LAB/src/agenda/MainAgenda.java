@@ -156,7 +156,7 @@ public class MainAgenda {
 		if (contato != null) {
 
 			Favorito compara = new Favorito(contato.getNome(), contato.getSobrenome());
-			for (int i = 0; i <= 10; i++) {
+			for (int i = 0; i < 10; i++) {
 				Favorito favoritos = agenda.getFavoritos(i);
 				if (compara.equals(favoritos)) {
 					comparaBool = true;
@@ -211,8 +211,8 @@ public class MainAgenda {
 		} else {
 
 			System.out.printf("CONTATO FAVORITADO NA POSIÇÃO %d !", posicao);
-			contato.setPosicaofavorito(posicao);
-			agenda.cadastraContatoFavorito(posicao, contatoSalvo);
+			contato.setPosicaofavorito(posicao -1);
+			agenda.cadastraContatoFavorito(posicao -1, contatoSalvo);
 		}
 
 	}
