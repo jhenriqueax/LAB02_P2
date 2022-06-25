@@ -1,3 +1,10 @@
+/**
+ * Classe favorito implementada para criar objetos do tipo favoritos que irão receber informações como:
+ * nome e sobrenome do contato favoritado pelo usuário.
+ * 
+ * @author João Henrique Almeida Xavier
+ */
+
 package agenda;
 
 import java.util.Objects;
@@ -13,6 +20,7 @@ public class Favorito {
 	 */
 	private String sobrenomeFavorito;
 
+	
 	/**
 	 * Construtor que "constroi" o objeto favorito por meio dos parametros nome
 	 * favorito e sobrenome favorito.
@@ -25,6 +33,7 @@ public class Favorito {
 		this.sobrenomeFavorito = sobrenomeFavorito;
 	}
 
+	
 	/**
 	 * Método que retorna o nome do objeto favorito.
 	 * 

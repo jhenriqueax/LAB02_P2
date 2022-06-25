@@ -1,4 +1,8 @@
 /**
+ * Classe contato implementada para criar objetos do tipo contato que irão receber informações como:
+ * nome, sobrenome, telefone e possiveis tags definidas pelo usúario, bem como a posição favorita 
+ * (caso o contato sejá favoritado). 
+ * 
  * @author João Henrique Almeida Xavier
  */
 
@@ -19,7 +23,7 @@ public class Contato {
 	 */
 	private String telefone;
 	/**
-	 * Array de str, que salva as tags do contato.
+	 * Array de str com tamanho 5, que salva as tags do contato.
 	 */
 	private String[] tag;
 	/**
@@ -41,7 +45,7 @@ public class Contato {
 	
 	/**
 	 * Construtor que "constroi"  o objeto contato com os parametros nome, sobrenome
-	 * e telefone previamente informados pelo usuário, além de inicializar outros atributos.
+	 * e telefone previamente informados pelo usuário, além de inicializar o array de tags.
 	 *  
 	 * @param nome nome do contato
 	 * @param sobrenome sobrenome do contato
@@ -52,6 +56,7 @@ public class Contato {
 		this.sobrenome = sobrenome;
 		this.telefone = telefone;
 		this.tag = new String[5];
+		this.concatena = "";
 	
 	}
 	
@@ -74,35 +79,65 @@ public class Contato {
 		this.posicaoFavorito = posicaofavorito;
 	}
 
-
-
-
-
+	/**
+	 * Método que define o nome do contato.
+	 * 
+	 * @param nome nome do contato
+	 */
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
+	
+	/**
+	 * Método que retorna o nome do contato.
+	 * 
+	 * @return nome nome do contato
+	 */
 	public String getNome() {
 		return this.nome;
 	}
-
+	/**
+	 * Método que retorna o sobrenome do contato.
+	 * 
+	 * @return sobrenome sobrenome do contato
+	 */
 	public String getSobrenome() {
 		return this.sobrenome;
 	}
 
+	/**
+	 * Método que retorna o telefone do contato.
+	 * 
+	 * @return telefone telefone do contato
+	 */
 	public String getTelefone() {
 		return this.telefone;
 	}
 
+	/**
+	 * Método que retorna a(s) tag(s) do contato.
+	 * 
+	 * @return tag tag(s) associadas ao contato
+	 */
 	public String[] getTag() {
 		return tag;
 	}
 
+	/**
+	 * Métódo que define as tags, informadas pelo usuário, no contato.
+	 * 
+	 * @param posicao posição que será armazenada a tag
+	 * @param tag tag informada pelo usúario.
+	 */
 	public void setTag(int posicao, String tag) {
 		this.tag[posicao] = tag;
 
 	}
 
+	/**
+	 * Método que auxilia na impressão o objeto contato, retornando uma str formatada, 
+	 * contendo nome, sobrenome, telefone e tags do objeto contatos.
+	 */
 	public String toString() {
 
 		for (int i = 0; i < tag.length; i++) {
