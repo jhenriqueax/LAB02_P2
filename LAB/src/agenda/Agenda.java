@@ -72,6 +72,8 @@ public class Agenda {
 	 * @param nome      Nome do contato.
 	 * @param sobrenome Sobrenome do contato.
 	 * @param telefone  Telefone do contato.
+	 * 
+	 * @return bool retorno se o contato foi cadastrado ou não
 	 */
 	public boolean cadastraContato(int posicao, String nome, String sobrenome, String telefone) {
 

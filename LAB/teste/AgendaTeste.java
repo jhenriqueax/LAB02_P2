@@ -1,20 +1,29 @@
+
+
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Objects;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import agenda.Agenda;
+import agenda.Favorito;
+
+
 
 class AgendaTeste {
 	
 	private Agenda agendaTeste;
 	
+
 	
 	@BeforeEach
 	void preparaAgenda(){
 		
 		Agenda agenda = new Agenda();
 		this.agendaTeste = agenda;
+		
 		
 	}
 
@@ -39,7 +48,7 @@ class AgendaTeste {
 	}
 	
 	/**
-	 * Testando limite das posiçoes do array de 100
+	 * Testando comportamento com os limite das posiçoes do array de 100
 	 */
 	@Test
 	void testaCadastraContato03(){
@@ -50,6 +59,56 @@ class AgendaTeste {
 		
 		
 	}
+	
+	/**
+	 * Testando comportamento com o contato já cadastrado 
+	 */
+	@Test
+	void testaCadastraContato04(){
+		
+		agendaTeste.cadastraContato(2, "Joao", "Henrique", "12345678");
+	
+		assertTrue(agendaTeste.cadastraContato(22, "Joao", "Henrique", "12345678"));
+		
+	}
+
+
+	void testaCadastroFavorito01(){
+		
+		agendaTeste.cadastraContato(1, "Joao", "Henrique", "555-12345");
+		
+		agendaTeste.cadastraContatoFavorito(4, 1);
+		
+		//assertEquals(agendaTeste.getFavoritos(4) , agendaTeste.cadastraContatoFavorito(4, 1));
+		
+		
+	}
+
+
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
 
 
 }

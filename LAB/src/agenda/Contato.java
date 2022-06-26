@@ -1,3 +1,9 @@
+
+
+package agenda;
+
+import java.util.Objects;
+
 /**
  * Classe contato implementada para criar objetos do tipo contato que irão receber informações como:
  * nome, sobrenome, telefone e possiveis tags definidas pelo usúario, bem como a posição favorita 
@@ -5,11 +11,6 @@
  * 
  * @author João Henrique Almeida Xavier
  */
-
-package agenda;
-
-import java.util.Objects;
-
 public class Contato {
 
 	/**

@@ -231,16 +231,18 @@ public class MainAgenda {
 		if (comparaBool == true) {
 			System.out.println("ESTE CONTATO JÁ FOI FAVORITADO");
 		} else {
-
-			System.out.printf("CONTATO FAVORITADO NA POSIÇÃO %d !", posicao);
+			
 			contato.setPosicaofavorito(posicao -1);
+			System.out.printf("CONTATO FAVORITADO NA POSIÇÃO %d !", posicao);
 			agenda.cadastraContatoFavorito(posicao -1, contatoSalvo-1);
 		}
 
 	}
 
 	/**
-	 * Cadastra um contato na agenda.
+	 * Cadastra um contato na agenda, já realizando uma pré tratamento dos dados
+	 * de forma que o método criaContato() só é chamado quando os parametros estão
+	 * todos corretos (preenchidos como especificado) e não são repetidos.
 	 * 
 	 * @param agenda  A agenda.
 	 * @param scanner Scanner para pedir informações do contato.

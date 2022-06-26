@@ -1,14 +1,15 @@
+
+
+package agenda;
+
+import java.util.Objects;
+
 /**
  * Classe favorito implementada para criar objetos do tipo favoritos que irão receber informações como:
  * nome e sobrenome do contato favoritado pelo usuário.
  * 
  * @author João Henrique Almeida Xavier
  */
-
-package agenda;
-
-import java.util.Objects;
-
 public class Favorito {
 
 	/**
