@@ -2,12 +2,12 @@
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Objects;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import agenda.Agenda;
+import agenda.Contato;
 import agenda.Favorito;
 
 
@@ -16,6 +16,7 @@ class AgendaTeste {
 	
 	private Agenda agendaTeste;
 	
+	
 
 	
 	@BeforeEach
@@ -23,7 +24,6 @@ class AgendaTeste {
 		
 		Agenda agenda = new Agenda();
 		this.agendaTeste = agenda;
-		
 		
 	}
 
@@ -72,14 +72,25 @@ class AgendaTeste {
 		
 	}
 
-
+	/**
+	 * Testando cadastro de contatos no método cadastraContatoFavorito
+	 */
+	
+	//@Test 
+	//Não está funcionando
 	void testaCadastroFavorito01(){
 		
 		agendaTeste.cadastraContato(1, "Joao", "Henrique", "555-12345");
 		
 		agendaTeste.cadastraContatoFavorito(4, 1);
 		
-		//assertEquals(agendaTeste.getFavoritos(4) , agendaTeste.cadastraContatoFavorito(4, 1));
+		Contato contato = agendaTeste.getContato(1);
+		Favorito favorito = agendaTeste.getFavoritos(4);
+		
+		String contatoTeste = contato.getNome() + contato.getSobrenome();
+		String favoritoTeste = favorito.getNome() + favorito.getSobrenome();
+		
+		assertEquals(contatoTeste, favoritoTeste);
 		
 		
 	}
