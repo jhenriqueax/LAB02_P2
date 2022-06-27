@@ -120,7 +120,7 @@ public class MainAgenda {
 		
 		for (int i = 0; i < arrayPosicao.length; i++) {
 			int pos = Integer.parseInt((arrayPosicao[i]));
-			contatos[pos-1].setTag(posicao-1, tag);
+			contatos[pos-1].setTag(posicao, tag);
 		}
 		
 
@@ -180,7 +180,7 @@ public class MainAgenda {
 					break;
 				}
 			}
-
+			
 			if (comparaBool == true) {
 				System.out.println("Dados do contato:\n" + "\n" + "❤️" + contato.toString());
 			} else {
@@ -214,7 +214,7 @@ public class MainAgenda {
 		System.out.println("Contato> ");
 		int contatoSalvo = scanner.nextInt();
 
-		Contato contato = agenda.getContato(contatoSalvo -1);
+		Contato contato = agenda.getContato(contatoSalvo-1);
 
 		System.out.println("Posicao> ");
 		int posicao = scanner.nextInt();
@@ -232,9 +232,9 @@ public class MainAgenda {
 			System.out.println("ESTE CONTATO JÁ FOI FAVORITADO");
 		} else {
 			
-			contato.setPosicaofavorito(posicao -1);
+			contato.setPosicaofavorito(posicao-1);
 			System.out.printf("CONTATO FAVORITADO NA POSIÇÃO %d !", posicao);
-			agenda.cadastraContatoFavorito(posicao -1, contatoSalvo-1);
+			agenda.cadastraContatoFavorito(posicao-1, contatoSalvo-1);
 		}
 
 	}
@@ -274,8 +274,8 @@ public class MainAgenda {
 					System.out.println("CONTATO INVALIDO");
 				} else {
 
-					if (!agenda.cadastraContato(posicao, nome, sobrenome, telefone)) {
-						agenda.cadastraContato(posicao, nome, sobrenome, telefone);
+					if (!agenda.cadastraContato(posicao-1, nome, sobrenome, telefone)) {
+						agenda.cadastraContato(posicao-1, nome, sobrenome, telefone);
 						System.out.println("CADASTRO REALIZADO");
 					} else {
 						System.out.println("CONTATO JA CADASTRADO");

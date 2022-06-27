@@ -48,14 +48,14 @@ class AgendaTeste {
 	}
 	
 	/**
-	 * Testando comportamento com os limite das posiçoes do array de 100
+	 * Testando comportamento com os limites das posiçoes do array de 100
 	 */
 	@Test
 	void testaCadastraContato03(){
 	
 		assertFalse(agendaTeste.cadastraContato(1, "Joao", "Henrique", "555-1234"));
 		assertFalse(agendaTeste.cadastraContato(50, "Gabriel", "Lacerda", "555-2345"));
-		assertFalse(agendaTeste.cadastraContato(100, "Lucas", "Carvalho", "555-3456"));
+		assertFalse(agendaTeste.cadastraContato(99, "Lucas", "Carvalho", "555-3456"));
 		
 		
 	}
@@ -75,9 +75,7 @@ class AgendaTeste {
 	/**
 	 * Testando cadastro de contatos no método cadastraContatoFavorito
 	 */
-	
-	//@Test 
-	//Não está funcionando
+	@Test 
 	void testaCadastroFavorito01(){
 		
 		agendaTeste.cadastraContato(1, "Joao", "Henrique", "555-12345");
@@ -92,11 +90,65 @@ class AgendaTeste {
 		
 		assertEquals(contatoTeste, favoritoTeste);
 		
-		
 	}
-
-
+	/**
+	 * Testando cadastro de contatos no método cadastraContatoFavorito no
+	 * limite mínimo do array de favoritos de tamanho 10
+	 */
+	@Test 
+	void testaCadastroFavorito02(){
+		
+		agendaTeste.cadastraContato(1, "Joao", "Henrique", "555-12345");
+		
+		agendaTeste.cadastraContatoFavorito(0, 1);
+		
+		Contato contato = agendaTeste.getContato(1);
+		Favorito favorito = agendaTeste.getFavoritos(0);
+		
+		String contatoTeste = contato.getNome() + contato.getSobrenome();
+		String favoritoTeste = favorito.getNome() + favorito.getSobrenome();
+		
+		assertEquals(contatoTeste, favoritoTeste);
 	
+	}
+	
+	/**
+	 * Testando cadastro de contatos no método cadastraContatoFavorito no
+	 * limite máximo do array de favoritos de tamanho 10
+	 */
+	@Test 
+	void testaCadastroFavorito03(){
+		
+		agendaTeste.cadastraContato(1, "Joao", "Henrique", "555-12345");
+		
+		agendaTeste.cadastraContatoFavorito(9, 1);
+		
+		Contato contato = agendaTeste.getContato(1);
+		Favorito favorito = agendaTeste.getFavoritos(9);
+		
+		String contatoTeste = contato.getNome() + contato.getSobrenome();
+		String favoritoTeste = favorito.getNome() + favorito.getSobrenome();
+		
+		assertEquals(contatoTeste, favoritoTeste);
+	
+	}
+	
+	/**
+	 * Testando remove contatos 
+	 */
+	@Test 
+	void testaRemove01(){
+		
+		agendaTeste.cadastraContato(1, "Joao", "Henrique", "555-12345");
+		
+		agendaTeste.cadastraContatoFavorito(4, 1);
+		
+		agendaTeste.remove(1);
+		
+		
+		assertEquals(agendaTeste.getContato(1), null);
+		assertEquals(agendaTeste.getFavoritos(1),null);
+	}
 
 
 	
